@@ -17,7 +17,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker build . -t makinglaugh/pintu:${tag_ver}
+          dockerImage = docker build .
         }
       }
     }
