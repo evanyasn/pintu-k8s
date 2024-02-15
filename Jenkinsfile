@@ -14,30 +14,29 @@ pipeline {
         git 'https://github.com/evanyasn/pintu-k8s'
       }
     }
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build "makinglaugh/pintu"
-        }
-      }
-    }
-    stage('Pushing Image') {
-      environment {
-          registryCredential = 'dockerhub-credential'
-           }
-      steps{
-        script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("${tag_ver}")
-          }
-        }
-      }
-    }
-    stage('Deploying React.js container to Kubernetes') {
+    // stage('Build image') {
+    //   steps{
+    //     script {
+    //       dockerImage = docker.build "makinglaugh/pintu"
+    //     }
+    //   }
+    // }
+    // stage('Pushing Image') {
+    //   environment {
+    //       registryCredential = 'dockerhub-credential'
+    //        }
+    //   steps{
+    //     script {
+    //       docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+    //         dockerImage.push("${tag_ver}")
+    //       }
+    //     }
+    //   }
+    // }
+    stage('Deploying Pintu-app to k8s') {
       steps {
         script {
-          kubernetesDeploy(configs: "deployment.yaml", 
-                                         "service.yaml")
+          kubernetesDeploy(configs: "./node-app/k8s.yaml")
         }
       }
     }
