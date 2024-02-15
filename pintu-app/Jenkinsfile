@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
   
 pipeline {
-  agent { label 'master' }
+//  agent { label 'master' }
   environment {
     dockerImage = ""
     tag_ver = sh (
