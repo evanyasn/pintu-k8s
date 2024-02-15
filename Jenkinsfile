@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/YOURUSERNAME/jenkins-kubernetes-deployment.git'
+        git 'https://github.com/evanyasn/pintu-k8s'
       }
     }
     stage('Build image') {
@@ -23,12 +23,12 @@ pipeline {
     }
     stage('Pushing Image') {
       environment {
-          registryCredential = 'dockerhub-credentials'
+          registryCredential = 'dockerhub-credential'
            }
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
+            dockerImage.push("${tag_ver}")
           }
         }
       }
