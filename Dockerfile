@@ -6,4 +6,6 @@ COPY . /usr/src/app/
 
 RUN npm install 
 
-CMD ["node", "test.js"]
+USER app
+
+CMD ["node", "app.js"]
