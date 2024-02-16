@@ -38,9 +38,7 @@ pipeline {
       steps {
         sh "sed -i \'s/latest/${tag_ver}/\' ./pintu-app/k8s.yaml"
 
-        script {
-          kubernetesDeploy(configs: "./node-app/k8s.yaml")
-        }
+        sh "kubectl apply -f ./pintu-app/k8s.yaml"
       }
     }
   }
