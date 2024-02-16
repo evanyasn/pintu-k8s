@@ -36,6 +36,8 @@ pipeline {
     }
     stage('Deploying Pintu-app to k8s') {
       steps {
+        sh "sed \'s/makinglaugh/pintu:latest/makinglaugh/pintu:${tag_ver}/\' k8s.yaml"
+
         script {
           kubernetesDeploy(configs: "./node-app/k8s.yaml")
         }
