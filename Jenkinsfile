@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
   
 pipeline {
-//  agent { label 'master' }
+  agent any
   environment {
     dockerImage = ""
     tag_ver = sh (
@@ -36,9 +36,9 @@ pipeline {
     }
     stage('Deploying Pintu-app to k8s') {
       steps {
-        script {
-          kubernetesDeploy(configs: "./node-app/k8s.yaml")
-        }
+        sh "sed -i \'s/latest/${tag_ver}/\' k8s.yaml"
+
+        sh "kubectl apply -f k8s.yaml"
       }
     }
   }
