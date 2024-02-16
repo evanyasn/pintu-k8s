@@ -14,7 +14,7 @@ app.get('/trialinfo', function(req, res) {
  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
  let year = date_ob.getFullYear();
 
- res.send("Xendit - Trial - Evan Nababan - <24-02-2020> - <"+date+"-"+month+"-"+year+">")
+ res.send("Pintu - Assessment - Evan Nababan - <16-02-2024> - <"+date+"-"+month+"-"+year+">")
 });
 
 app.get('/osinfo', function(req, res) {

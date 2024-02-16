@@ -1,31 +1,19 @@
 {
-  "name": "xendit-node",
+  "name": "pintu-k8s",
   "version": "1.0.0",
-  "description": "xendit trial for node scm",
+  "description": "App and deployment files for PINTU assessment process",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/makinglaugh/xendit-node.git"
+    "url": "git+https://github.com/evanyasn/pintu-k8s.git"
   },
-  "author": "",
+  "author": "Evan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/makinglaugh/xendit-node/issues"
+    "url": "https://github.com/evanyasn/pintu-k8s/issues"
   },
-  "homepage": "https://github.com/makinglaugh/xendit-node#readme",
-  "dependencies": {
-    "@lvgithub/ctrip-apollo-client": "^1.0.38",
-    "@vodyani/apollo-client": "^1.5.0",
-    "apollo-node-client": "^1.4.3",
-    "express": "^4.17.1",
-    "install": "^0.13.0",
-    "loglevel": "^1.8.1",
-    "mongodb": "^3.5.3",
-    "node-apollo": "^1.2.1",
-    "node-apollo-client": "^0.1.7",
-    "npm": "^10.3.0"
-  }
+  "homepage": "https://github.com/evanyasn/pintu-k8s#readme"
 }
