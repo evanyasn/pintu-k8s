@@ -6,4 +6,7 @@ COPY . /usr/src/app/
 
 RUN npm install 
 
+# Bundle app source
+COPY . /usr/src/app
+
 CMD ["node", "app.js"]
