@@ -6,6 +6,7 @@ COPY . /usr/src/app/
 
 RUN npm install 
 
+RUN useradd -ms /bin/bash app
 USER app
 
 CMD ["node", "app.js"]
