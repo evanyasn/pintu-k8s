@@ -33,3 +33,10 @@ Say what the step will be
 4. Develope node-app project using nodejs. Prepare jenkinsfile. Codebase are inside ROOT directory
 5. Deploy node-app into kubernetes using Jenkins. node-app manifest file (k8s.yaml) and Jenkinsfile is inside ROOT directory.
 ```
+
+## Running the tests
+
+```
+1. Access Jenkins app using localhost:8080
+2. Access running app using localhost:8081
+```
